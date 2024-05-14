@@ -6,5 +6,23 @@ import { RouterLink, RouterView } from 'vue-router'
   <RouterView />
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding-top: 4vh;
+  /* height: 96vh; */
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
 </style>
