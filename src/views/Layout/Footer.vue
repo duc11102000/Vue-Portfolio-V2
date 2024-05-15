@@ -1,5 +1,6 @@
 <template>
     <div class="footer">
+
         <footer>
             <nav>
                 <div class="nav-links-container">
@@ -21,6 +22,10 @@ export default {};
 </script>
 
 <style scoped lang="scss">
+.footer {
+    position: relative;
+}
+
 footer {
     display: flex;
     flex-direction: column;

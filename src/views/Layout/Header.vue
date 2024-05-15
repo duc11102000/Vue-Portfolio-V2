@@ -1,6 +1,6 @@
 <template>
     <div class="bg-[#3F9DD5]">
-        <nav id="desktop-nav">
+        <nav id="desktop-nav" data-aos="fade-down">
             <!-- <div class="logo">Nguyễn Hữu Đức</div> -->
             <div>
                 <ul class="nav-links">
@@ -29,6 +29,16 @@
         </nav>
     </div>
 </template>
+
+<script setup>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { ref, onMounted } from 'vue'
+
+onMounted(() => {
+    AOS.init();
+})
+</script>
 
 <style scoped lang="scss">
 /*------------ DESKTOP NAVIGATION ---------------*/

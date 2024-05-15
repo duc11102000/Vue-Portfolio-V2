@@ -1,11 +1,11 @@
 <template>
     <div id="experience">
         <section>
-            <p class="section__text__p1">Explore My</p>
-            <h1 class="title">Experience</h1>
+            <p class="section__text__p1" data-aos="fade-down">Explore My</p>
+            <h1 class="title" data-aos="fade-down">Experience</h1>
             <div class="experience-details-container">
                 <div class="about-containers">
-                    <div class="details-container">
+                    <div class="details-container" data-aos="flip-left">
                         <h2 class="experience-sub-title">Front-end Development</h2>
                         <div class="article-container">
                             <article>
@@ -52,7 +52,7 @@
                             </article>
                         </div>
                     </div>
-                    <div class="details-container">
+                    <div class="details-container" data-aos="flip-right">
                         <h2 class="experience-sub-title">Front-end Development</h2>
                         <div class="article-container">
                             <article>
@@ -88,12 +88,41 @@
                 </div>
             </div>
         </section>
+        <div class="bubble bubble-1" data-aos="zoom-in-up"></div>
+        <div class="bubble bubble-2" data-aos="zoom-in-up"></div>
+        <div class="bubble bubble-3" data-aos="zoom-in-up"></div>
+        <div class="bubble bubble-4" data-aos="zoom-in-up"></div>
+        <div class="bubble bubble-5" data-aos="zoom-in-up"></div>
+        <div class="bubble bubble-6" data-aos="zoom-in-up"></div>
+        <div class="bubble bubble-7" data-aos="zoom-in-up"></div>
+        <div class="wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
     </div>
 </template>
+
+<script setup>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { ref, onMounted } from 'vue'
+
+onMounted(() => {
+    AOS.init();
+})
+</script>
 
 <style scoped lang="scss">
 #experience {
     background: #005B91;
+    position: relative;
+    z-index: 999;
+    // background-image: url('@/assets/images/bg-code.svg');
+    // background-repeat: no-repeat;   
 
     section {
         position: relative;
@@ -102,6 +131,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+
         .title {
             text-align: center;
             font-size: 4rem;
@@ -191,6 +221,75 @@
 
     }
 
+    .bubble {
+        position: absolute;
+        z-index: -999;
+    }
 
+    .bubble-1 {
+        top: 50%;
+        left: 15px;
+        border-radius: 100%;
+        width: 225px;
+        height: 225px;
+        background: #2883b9;
+    }
+
+    .bubble-2 {
+        top: 30%;
+        right: 15px;
+        border-radius: 100%;
+        width: 300px;
+        height: 300px;
+        background: #2883b9;
+    }
+
+    .bubble-3 {
+        top: 5%;
+        left: 100px;
+        border-radius: 100%;
+        width: 150px;
+        height: 150px;
+        background: #2883b9;
+    }
+
+
+    .bubble-4 {
+        top: 5%;
+        right: 30%;
+        border-radius: 100%;
+        width: 150px;
+        height: 150px;
+        background: #2883b9;
+    }
+
+    .bubble-5 {
+        top: 50%;
+        right: 35%;
+        border-radius: 100%;
+        width: 300px;
+        height: 300px;
+        background: #2883b9;
+    }
+
+    .wave {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+
+        svg {
+            position: relative;
+            display: block;
+            width: calc(143% + 1.3px);
+            height: 112px;
+        }
+
+        .shape-fill {
+            fill: #FFFFFF;
+        }
+    }
 }
 </style>

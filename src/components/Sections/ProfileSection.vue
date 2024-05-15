@@ -1,10 +1,10 @@
 <template>
     <div id="profile">
         <section>
-            <div class="section__pic-container">
-                <img src="../../assets/images/profile2.png" alt="picture" />
+            <div class="section__pic-container" data-aos="fade-down">
+                <img src="../../assets/images/profile.jpg" alt="picture" />
             </div>
-            <div class="section__text">
+            <div class="section__text" data-aos="fade-up">
                 <p class="section__text__p1">Hello, I'm</p>
                 <h1 class="title">Nguyễn Hữu Đức</h1>
                 <p class="section__text__p2">Frontend Developer</p>
@@ -24,12 +24,33 @@
                 </div>
             </div>
         </section>
+        <div class="bubble bubble-1" data-aos="zoom-in-right"></div>
+        <div class="bubble bubble-2" data-aos="zoom-in-left"></div>
+        <div class="bubble bubble-3" data-aos="zoom-in-right"></div>
+        <div class="bubble bubble-4" data-aos="zoom-in-left"></div>
     </div>
 </template>
+
+<script setup>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { ref, onMounted } from 'vue'
+
+onMounted(() => {
+    AOS.init();
+})
+</script>
+
 
 <style scoped lang="scss">
 #profile {
     background: #3F9DD5;
+    position: relative;
+    z-index: 999;
+
+    .flip {
+        transform: rotate(180deg);
+    }
 
     section {
         display: flex;
@@ -113,5 +134,46 @@
         }
     }
 
+    .bubble {
+        position: absolute;
+        z-index: -999;
+    }
+
+    .bubble-1 {
+        top: 50%;
+        left: 15px;
+        border-radius: 100%;
+        width: 225px;
+        height: 225px;
+        background: #2883b9;
+    }
+
+    .bubble-2 {
+        top: 30%;
+        right: 15px;
+        border-radius: 100%;
+        width: 300px;
+        height: 300px;
+        background: #2883b9;
+    }
+
+    .bubble-3 {
+        top: 5%;
+        left: 100px;
+        border-radius: 100%;
+        width: 150px;
+        height: 150px;
+        background: #2883b9;
+    }
+
+
+    .bubble-4 {
+        top: 5%;
+        right: 30%;
+        border-radius: 100%;
+        width: 150px;
+        height: 150px;
+        background: #2883b9;
+    }
 }
 </style>

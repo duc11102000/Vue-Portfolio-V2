@@ -3,15 +3,15 @@
 <template>
     <div id="projects">
         <section>
-            <p class="section__text__p1">Browse My Recent</p>
-            <h1 class="title">Projects</h1>
+            <p class="section__text__p1" data-aos="fade-down">Browse My Recent</p>
+            <h1 class="title" data-aos="fade-down">Projects</h1>
             <swiper :modules="modules" :slides-per-view="swiperOptions.slidesPerView"
                 :space-between="swiperOptions.spaceBetween" :autoplay="{
                     delay: 2500,
                     disableOnInteraction: false,
                 }" :breakpoints="swiperOptions.breakpoints" class="projects-details-container">
-                <swiper-slide v-for="(items, index) in projectData.projectsArray" :key="items">
-                    <div class="details-container">
+                <swiper-slide v-for="(items, index) in projectData.projectsArray" :key="items" >
+                    <div class="details-container" data-aos="flip-up">
                         <div class="article-container">
                             <img :src="projectData.projectsArray[index].Image" alt="Project 1" class="project-img" />
                         </div>
@@ -31,16 +31,28 @@
                 </swiper-slide>
             </swiper>
         </section>
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
     </div>
 </template>
 
 <script setup>
 import jsonData from '../../../projects.json'
-import { ref } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay } from "swiper/modules";
+import AOS from 'aos';
 import "swiper/css";
 import "swiper/css/autoplay";
+import 'aos/dist/aos.css';
+import { ref, onMounted } from 'vue'
 
 const projectData = jsonData
 
@@ -64,16 +76,22 @@ const swiperOptions = ref({
         // When window width is >= 1024px
     },
 });
+
+onMounted(() => {
+    AOS.init();
+})
 </script>
 
 <style scoped lang="scss">
 #projects {
     background: #3F9DD5;
+    position: relative;
+    z-index: 999;
 
     section {
         position: relative;
         padding: 5rem 0;
-        height: 100vh;
+        // height: 100vh;
 
         .title {
             text-align: center;
@@ -86,6 +104,7 @@ const swiperOptions = ref({
             font-size: 22px;
             text-align: center;
             color: #fff;
+            margin-top: 3rem;
         }
 
         .projects-details-container {
@@ -149,7 +168,47 @@ const swiperOptions = ref({
         }
     }
 
+    .bubble {
+        position: absolute;
+        z-index: -999;
+        background: #206690;
+    }
 
+    .bubble-1 {
+        top: 50%;
+        left: 15px;
+        border-radius: 100%;
+        width: 400px;
+        height: 400px;
+    }
+
+    .bubble-2 {
+        top: 30%;
+        right: 15px;
+        border-radius: 100%;
+        width: 300px;
+        height: 300px;
+    }
+
+    .wave {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+
+    .wave svg {
+        position: relative;
+        display: block;
+        width: calc(117% + 1.3px);
+        height: 271px;
+    }
+
+    .wave .shape-fill {
+        fill: #005B91;
+    }
 
 }
 </style>
