@@ -125,8 +125,10 @@ onMounted(() => {
     // background-repeat: no-repeat;   
 
     section {
-        position: relative;
+        width: 90%;
+        margin: 0 auto;
         margin-top: 100px;
+        position: relative;
         height: 100vh;
         display: flex;
         flex-direction: column;

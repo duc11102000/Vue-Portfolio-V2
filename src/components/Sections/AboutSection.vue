@@ -62,7 +62,8 @@ onMounted(() => {
     section {
         position: relative;
         z-index: 1;
-
+        width: 90%;
+        margin: 0 auto;
         p {
             color: #002f4b;
             font-size: 22px;
@@ -84,7 +85,8 @@ onMounted(() => {
         }
 
         .about-details-container {
-            width: 800px;
+            max-width: 800px;
+            width: 100%;
             margin: 0 auto;
             justify-content: center;
             flex-direction: column;
@@ -153,12 +155,6 @@ onMounted(() => {
             color: rgb(85, 85, 85);
         }
 
-        @media screen and (max-width: 1400px) {
-            .about-containers {
-                flex-wrap: wrap;
-            }
-        }
-
         .bubble {
             position: absolute;
             z-index: -999;
@@ -212,7 +208,15 @@ onMounted(() => {
         }
     }
 
-
+    @media (max-width: 991px) {
+        section {
+            .about-details-container {
+                .about-containers {
+                    flex-direction: column;
+                }
+            }
+        }
+    }
 }
 
 #about::before {

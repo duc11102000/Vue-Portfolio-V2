@@ -24,10 +24,10 @@
                 </div>
             </div>
         </section>
-        <div class="bubble bubble-1" data-aos="zoom-in-right"></div>
-        <div class="bubble bubble-2" data-aos="zoom-in-left"></div>
-        <div class="bubble bubble-3" data-aos="zoom-in-right"></div>
-        <div class="bubble bubble-4" data-aos="zoom-in-left"></div>
+        <div class="bubble bubble-1" data-aos="fade-up"></div>
+        <div class="bubble bubble-2" data-aos="fade-up"></div>
+        <div class="bubble bubble-3" data-aos="fade-up"></div>
+        <div class="bubble bubble-4" data-aos="fade-up"></div>
     </div>
 </template>
 
@@ -58,6 +58,8 @@ onMounted(() => {
         align-items: center;
         gap: 5rem;
         height: 83vh;
+        width: 90%;
+        margin: 0 auto;
 
         .title {
             text-align: center;
@@ -166,7 +168,6 @@ onMounted(() => {
         background: #2883b9;
     }
 
-
     .bubble-4 {
         top: 5%;
         right: 30%;
@@ -174,6 +175,16 @@ onMounted(() => {
         width: 150px;
         height: 150px;
         background: #2883b9;
+    }
+
+
+    @media (max-width: 991px) {
+        section {
+            flex-direction: column;
+            height: 100%;
+            padding: 15px;
+            gap: 2rem;
+        }
     }
 }
 </style>
