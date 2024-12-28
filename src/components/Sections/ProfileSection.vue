@@ -10,7 +10,7 @@
         <p class="section__text__p2">Frontend Developer</p>
         <div class="btn-container">
           <a
-            href="https://drive.google.com/file/d/1Wt6wpI_K5kJRIH8jc23vMeZfQ4gfnFsq/view?usp=sharing"
+            href="https://drive.google.com/file/d/180S4nQaDMUyG5UkgWEUndOuYrDLrN1Vz/view?usp=sharing"
             target="_blank"
             class="btn btn-color-2"
           >
